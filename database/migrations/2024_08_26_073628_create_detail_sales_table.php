@@ -29,7 +29,7 @@ return new class extends Migration
                 ->on('products')
                 ->onDelete('cascade');
         });
-    }
+    }   
 
     /**
      * Reverse the migrations.
