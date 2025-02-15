@@ -88,9 +88,9 @@
 <body>
     <div class="struk">
         <div class="struk-header">
-            <h1>Warming Smoke n' Coffee</h1>
-            <p>Jl. Bina Karya, 45B Kota Jakarta Timur</p>
-            <p>(021) 321098765</p>
+            <h1>GMSNETX</h1>
+            <p>Jl. Cendana No.104, Baru, Kec. Ps. Rebo, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13760</p>
+            <p>0889-0601-1993</p>
         </div>
         <div class="struk-body">
             <table>
@@ -127,8 +127,8 @@
             </div>
         </div>
         <div class="struk-footer">
-            <p>Terima Kasih Atas Kunjungan Anda!</p>
-            <p>Semoga Berbelanja Kembali!</p>
+            <p>Bukti Transaksi</p>
+            <p>Mari Tetap Terhubung !</p>
         </div>
     </div>
 </body>
