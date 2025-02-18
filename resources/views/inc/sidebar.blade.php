@@ -85,7 +85,7 @@
           </ul>
           <li class="nav-item">
             <a href="{{ route('keluar') }}" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="fas fa-sign-out-alt nav-icon"></i>
                 <p>LogOut</p>
             </a>
           </li>
