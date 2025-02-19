@@ -27,11 +27,11 @@
                         <td>{{ $no++ }}</td>
                         <td>{{ $sales->trans_code }}</td>
                         <td>{{ $sales->trans_date }}</td>
-                        <td>{{ $sales->trans_total_price }}</td>
-                        <td>{{ $sales->trans_paid }}</td>
-                        <td>{{ $sales->trans_change }}</td>
+                        <td>{{ 'Rp.' . number_format($sales->trans_total_price) }}</td>
+                        <td>{{ 'Rp.' . number_format($sales->trans_paid) }}</td>
+                        <td>{{ 'Rp.' . number_format($sales->trans_change) }}</td>
                         <td>
-                            <a href="{{ route('sales.edit', $sales->id) }}" class="btn btn-success btn-xs">Edit</a>
+                            {{-- <a href="{{ route('sales.edit', $sales->id) }}" class="btn btn-success btn-xs">Edit</a> --}}
                             {{-- <a href="{{ route('sales.destroy', $sales->id) }}" class="btn btn-danger btn-xs">Delete</a> --}}
                             <form class="d-inline" action="{{ route('sales.destroy', $sales->id) }}" method="post">
                                 @csrf

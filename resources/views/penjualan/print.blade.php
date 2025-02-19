@@ -54,6 +54,8 @@
             margin-top: 10px;
         }
         @media print{
+                
+
             body {
                 margin: 0;
                 padding: 0;
@@ -88,10 +90,12 @@
 <body>
     <div class="struk">
         <div class="struk-header">
-            <h1>GMSNETX</h1>
-            <p>Jl. Cendana No.104, Baru, Kec. Ps. Rebo, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13760</p>
-            <p>0889-0601-1993</p>
+            <img src="{{ asset('img/logo.jpeg') }}" alt="Logo" style="max-width: 60px; display: block; margin: 0 auto;">
+            {{-- <h1>GMSNETX</h1> --}}
+            <p>Jl. Cendana No.104, Baru, Kec. Ps. Rebo, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta (13760)</p>
+            <p>(0889-0601-1993)</p>
         </div>
+        
         <div class="struk-body">
             <table>
                 <thead>
@@ -137,4 +141,6 @@
     window.onload=function (){
         window.print();
     };
+
+    
 </script>
