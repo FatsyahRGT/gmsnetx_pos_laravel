@@ -83,6 +83,14 @@
               </a>
             </li>
           </ul>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="{{ route('sales.index') }}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Riwayat Transaksi</p>
+              </a>
+            </li>
+          </ul>
           <li class="nav-item">
             <a href="{{ route('keluar') }}" class="nav-link">
               <i class="fas fa-sign-out-alt nav-icon"></i>

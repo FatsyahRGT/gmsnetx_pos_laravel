@@ -25,6 +25,7 @@ Route::middleware(['checkLevel:3'])->group(function () {
 });
 Route::resource('dashboard', \App\Http\Controllers\DashboardController::class)->middleware('auth');
 Route::resource('user', \App\Http\Controllers\UserController::class);
+Route::resource('sales', \App\Http\Controllers\SalesController::class);
 Route::resource('category', \App\Http\Controllers\CategoryController::class);
 Route::resource('product', \App\Http\Controllers\ProductController::class);
 
