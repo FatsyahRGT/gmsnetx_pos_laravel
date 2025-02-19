@@ -27,7 +27,7 @@
                         <td>{{ $product->category->category_name }}</td>
                         <td>{{ $product->product_name }}</td>
                         <td>{{ $product->product_qty }}</td>
-                        <td>{{ $product->product_price }}</td>
+                        <td>{{ 'Rp.' . number_format ($product->product_price) }}</td>
                         <td>
                             <a href="{{ route('product.edit', $product->id) }}" class="btn btn-success btn-xs">Edit</a>
                             {{-- <a href="{{ route('product.destroy', $product->id) }}" class="btn btn-danger btn-xs">Delete</a> --}}
