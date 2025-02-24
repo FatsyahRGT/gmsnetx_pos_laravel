@@ -37,7 +37,8 @@ class UserController extends Controller
         User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => Hash::make($request->password)
+            'password' => Hash::make($request->password),
+            'id_level' => $request->id_level,
         ]);
         
         toast('Data berhasil simpan','success');

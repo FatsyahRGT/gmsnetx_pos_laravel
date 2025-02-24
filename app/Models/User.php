@@ -20,6 +20,14 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'is_active',
+        'ip_address',
+        'masa_berlaku',
+        'disconnect',
+        'longitude',
+        'latitude',
+        'nama_paket',
+        'id_level',
         'level_name',
     ];
 
