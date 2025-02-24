@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Levels;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
@@ -24,7 +25,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('user.create');
+        $levels = Levels::get();
+        return view('user.create', compact('levels'));
     }
 
     /**
