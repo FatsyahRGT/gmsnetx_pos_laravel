@@ -59,7 +59,8 @@ class UserController extends Controller
     public function edit(string $id)
     {
         $edit = User::findorFail($id);
-        return view('user.edit', compact('edit'));
+        $levels = Levels::all();
+        return view('user.edit', compact('edit', 'levels'));
     }
 
     /**
@@ -71,9 +72,10 @@ class UserController extends Controller
         User::where('id', $id)->update([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => ($request->password ? Hash::make($request->password) : $user->password)
+            'password' => ($request->password ? Hash::make($request->password) : $user->password),
+            'id_level' => $request->id_level,
         ]);
-
+        toast('Data berhasil diubah','success');
         return redirect()->to('user')->with('message', 'Data berhasil di ubah');
     }
 
