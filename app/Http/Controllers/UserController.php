@@ -85,6 +85,7 @@ class UserController extends Controller
     public function destroy(string $id)
     {
         User::where('id', $id)->delete();
+        toast('Data berhasil dihapus','error');
         return redirect()->to('user')->with('message', 'Data berhasil di hapus');
     }
 }
