@@ -191,6 +191,30 @@
             });
         });
 
+        //function untuk mengembalikan nilai ketika hapus transaksi
+        function updateTotal() 
+        {
+            let total = 0;
+
+            $('.sub_total_val').each(function() {
+                let subTotal = parseFloat($(this).find('input').val()) || 0;
+                total += subTotal;
+            });
+
+            // Perbarui total harga di UI
+            $('.total_price').text(total.toLocaleString('id-ID'));
+            $('#total_price_val').val(total);
+
+            calculateChange(); // Pastikan kembalian tetap diperbarui setelah total berubah
+        }
+
+
+        // Event handler untuk klik tombol hapus
+        $(document).on('click', '.delete-product', function() {
+        $(this).closest('tr').remove(); // Hapus baris transaksi
+        updateTotal(); // Perbarui total harga setelah penghapusan
+        });
+
         // Event handler untuk klik tombol .tambah-produk
         $('.tambah-produk').click(function() {
             let category_id = $('#category_id').val(),
@@ -218,7 +242,7 @@
             newRow += "<td>" + product_qty + "<input type='hidden' name='qty[]' value='" + product_qty + "'></td>";
             newRow += "<td class='sub_total_val'>" + subTotal.toLocaleString('id-ID') +
                 "<input type='hidden' name='sub_total[]' value='" + subTotal + "'></td>";
-            newRow += "<td></td>";
+            newRow += "<td><button type='button' class='btn btn-danger btn-sm delete-product'>Hapus</button></td>";
             newRow += "</tr>";
 
             $('tbody').append(newRow);
