@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Waktu pembuatan: 16 Feb 2025 pada 07.32
+-- Waktu pembuatan: 25 Feb 2025 pada 15.20
 -- Versi server: 8.0.30
 -- Versi PHP: 8.2.27
 
@@ -58,6 +58,15 @@ CREATE TABLE `categories` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data untuk tabel `categories`
+--
+
+INSERT INTO `categories` (`id`, `category_name`, `created_at`, `updated_at`) VALUES
+(1, 'Paket Mahal', '2025-02-18 09:26:47', '2025-02-18 09:26:47'),
+(2, 'Paket Sedang', '2025-02-18 09:26:54', '2025-02-18 09:26:54'),
+(3, 'Paket Murah', '2025-02-18 09:27:00', '2025-02-18 09:27:00');
+
 -- --------------------------------------------------------
 
 --
@@ -73,6 +82,23 @@ CREATE TABLE `detail_sales` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `detail_sales`
+--
+
+INSERT INTO `detail_sales` (`id`, `sales_id`, `product_id`, `qty`, `sub_total`, `created_at`, `updated_at`) VALUES
+(1, 1, 2, 2, 900000, '2025-02-19 02:44:01', '2025-02-19 02:44:01'),
+(2, 2, 3, 2, 800000, '2025-02-19 02:44:40', '2025-02-19 02:44:40'),
+(3, 3, 3, 2, 800000, '2025-02-19 02:45:20', '2025-02-19 02:45:20'),
+(4, 4, 1, 1, 500000, '2025-02-19 07:32:57', '2025-02-19 07:32:57'),
+(5, 4, 1, 1, 500000, '2025-02-19 07:32:57', '2025-02-19 07:32:57'),
+(6, 5, 1, 1, 500000, '2025-02-19 07:39:58', '2025-02-19 07:39:58'),
+(7, 5, 1, 1, 500000, '2025-02-19 07:39:58', '2025-02-19 07:39:58'),
+(8, 6, 1, 1, 500000, '2025-02-20 01:44:51', '2025-02-20 01:44:51'),
+(9, 6, 1, 1, 500000, '2025-02-20 01:44:51', '2025-02-20 01:44:51'),
+(10, 7, 1, 1, 500000, '2025-02-22 21:44:03', '2025-02-22 21:44:03'),
+(11, 7, 4, 1, 5000, '2025-02-22 21:44:03', '2025-02-22 21:44:03');
 
 -- --------------------------------------------------------
 
@@ -203,6 +229,16 @@ CREATE TABLE `products` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data untuk tabel `products`
+--
+
+INSERT INTO `products` (`id`, `category_id`, `product_name`, `product_qty`, `product_price`, `description`, `created_at`, `updated_at`) VALUES
+(1, 1, 'Paket Wow mahal 1', 1, 500000, '1', '2025-02-19 02:40:38', '2025-02-19 02:40:38'),
+(2, 1, 'Paket Wow mahal 2', 1, 450000, '1', '2025-02-19 02:42:15', '2025-02-19 02:42:15'),
+(3, 1, 'Paket Wow mahal 3', 1, 400000, '1', '2025-02-19 02:42:35', '2025-02-19 02:42:35'),
+(4, 2, 'Paket Wow Sedang 1a', 1, 5000, '2', '2025-02-21 05:08:50', '2025-02-21 05:08:50');
+
 -- --------------------------------------------------------
 
 --
@@ -219,6 +255,18 @@ CREATE TABLE `sales` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `sales`
+--
+
+INSERT INTO `sales` (`id`, `trans_code`, `trans_date`, `trans_total_price`, `trans_paid`, `trans_change`, `created_at`, `updated_at`) VALUES
+(1, 'SL19022025001', '2025-02-19', 900000, 1000000, 100000, '2025-02-19 02:44:01', '2025-02-19 02:44:01'),
+(2, 'SL19022025002', '2025-02-19', 800000, 900000, 100000, '2025-02-19 02:44:40', '2025-02-19 02:44:40'),
+(4, 'SL19022025003', '2025-02-19', 1000000, 1500000, 500000, '2025-02-19 07:32:57', '2025-02-19 07:32:57'),
+(5, 'SL19022025005', '2025-02-19', 1000000, 1500000, 500000, '2025-02-19 07:39:58', '2025-02-19 07:39:58'),
+(6, 'SL20022025006', '2025-02-20', 1000000, 2000000, 1000000, '2025-02-20 01:44:51', '2025-02-20 01:44:51'),
+(7, 'SL23022025007', '2025-02-23', 505000, 600000, 95000, '2025-02-22 21:44:03', '2025-02-22 21:44:03');
 
 -- --------------------------------------------------------
 
@@ -240,7 +288,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('aOuObC3JHlD25e3De3WivcipSW8QA0OIoJP8VXN1', 4, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiOUNKNUlZNHlSQkxvVElGOVQzM0FvUTYyRTljc25hOHh2VGJMZ0FLbSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9kYXNoYm9hcmQiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aTo0O30=', 1739639592);
+('WRMuzZ9bqonkyngfWmAxheO1BoSXdgZh76F9IYY9', 4, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiTGlaalcxV0t2bFJVRGpmUDRyTENLVUVGY2pYclV4ZFN6em5IQTVuSCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wZW5qdWFsYW4iO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjU6ImFsZXJ0IjthOjA6e31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aTo0O30=', 1740496672);
 
 -- --------------------------------------------------------
 
@@ -378,13 +426,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `detail_sales`
 --
 ALTER TABLE `detail_sales`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT untuk tabel `failed_jobs`
@@ -414,19 +462,19 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT untuk tabel `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `sales`
 --
 ALTER TABLE `sales`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
