@@ -6,7 +6,7 @@
         <div align="right" class="mb-3">
             <a href="{{ route('category.create') }}" class="btn btn-primary">Tambah</a>
         </div>
-        <table class="table table-bordered text-center">
+        <table class="table table-bordered text-center" id="example1">
             <thead>
                 <tr>
                     <th>No</th>

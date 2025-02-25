@@ -112,6 +112,7 @@
     <script src="{{ asset('adm/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('adm/dist/js/adminlte.min.js') }}"></script>
+    
     <!-- AdminLTE for demo purposes -->
     {{-- <script src="{{ asset('adm/dist/js/demo.js') }}"></script> --}}
 
@@ -135,6 +136,9 @@
     <link rel="stylesheet" href="{{ asset('adm/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('adm/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('adm/plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
     <script>
         $(function() {
             $("#example1").DataTable({
