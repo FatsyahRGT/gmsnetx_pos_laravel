@@ -141,12 +141,15 @@
 
     <script>
         $(function() {
+            // Inisialisasi DataTable pada tabel dengan ID #example1
             $("#example1").DataTable({
                 "responsive": true,
                 "lengthChange": false,
                 "autoWidth": false,
                 "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
             }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    
+            // Inisialisasi DataTable pada tabel dengan ID #example2
             $('#example2').DataTable({
                 "paging": true,
                 "lengthChange": false,
@@ -157,11 +160,13 @@
                 "responsive": true,
             });
         });
-        // Event handler untuk perubahan pada #category_id
+    
+        // Event handler ketika kategori dipilih (Dropdown #category_id)
         $('#category_id').change(function() {
             let category_id = $(this).val(),
                 option = "";
-
+    
+            // AJAX request untuk mendapatkan daftar produk berdasarkan kategori yang dipilih
             $.ajax({
                 url: '/get-products/' + category_id,
                 type: 'GET',
@@ -169,17 +174,18 @@
                 success: function(resp) {
                     option += "<option value=''>Pilih Produk</option>";
                     $.each(resp, function(index, val) {
-                        option += "<option value='" + val.id + "'>" + val.product_name +
-                            "</option>";
+                        option += "<option value='" + val.id + "'>" + val.product_name + "</option>";
                     });
                     $('#product_id').html(option);
                 }
             });
         });
-
+    
+        // Event handler ketika produk dipilih (Dropdown #product_id)
         $('#product_id').change(function() {
             let product_id = $(this).val();
-
+    
+            // AJAX request untuk mendapatkan detail produk berdasarkan ID produk yang dipilih
             $.ajax({
                 url: '/get-product/' + product_id,
                 type: 'GET',
@@ -190,36 +196,40 @@
                 }
             });
         });
-
-        //function untuk mengembalikan nilai ketika hapus transaksi
-        function updateTotal() 
-        {
+    
+        // Fungsi untuk memperbarui total harga setelah ada perubahan dalam transaksi
+        function updateTotal() {
             let total = 0;
-
+    
+            // Iterasi setiap elemen dengan class .sub_total_val untuk menjumlahkan total transaksi
             $('.sub_total_val').each(function() {
                 let subTotal = parseFloat($(this).find('input').val()) || 0;
                 total += subTotal;
             });
-
-            // Perbarui total harga di UI
+    
+            // Perbarui total harga di tampilan dan input tersembunyi
             $('.total_price').text(total.toLocaleString('id-ID'));
             $('#total_price_val').val(total);
-
-            calculateChange(); // Pastikan kembalian tetap diperbarui setelah total berubah
+    
+            // Pastikan nilai kembalian juga diperbarui setelah total berubah
+            calculateChange();
         }
-
-
-        // Event handler untuk klik tombol hapus
+    
+        // Event handler untuk tombol hapus produk dalam daftar transaksi
         $(document).on('click', '.delete-product', function() {
-        $(this).closest('tr').remove(); // Hapus baris transaksi
-        updateTotal(); // Perbarui total harga setelah penghapusan
+            let row = $(this).closest('tr');
+            row.fadeOut(300, function() { // Efek fade-out sebelum menghapus
+                row.remove();
+                setTimeout(updateTotal, 50); // Tunggu 50ms sebelum memperbarui total
+            });
         });
-
-        // Event handler untuk klik tombol .tambah-produk
+    
+        // Event handler ketika tombol "Tambah Produk" diklik
         $('.tambah-produk').click(function() {
             let category_id = $('#category_id').val(),
                 product_id = $('#product_id').val();
-
+    
+            // Validasi: Pastikan kategori dan produk telah dipilih
             if (category_id === "") {
                 alert('Mohon pilih kategori terlebih dahulu!');
                 return false;
@@ -228,50 +238,48 @@
                 alert('Mohon pilih produk terlebih dahulu!');
                 return false;
             }
-
+    
+            // Ambil nilai dari input form
             let product_qty = parseInt($('#product_qty').val(), 10),
                 product_name = $('#product_name').val(),
                 product_price = parseInt($('#product_price').val(), 10);
             let subTotal = product_price * product_qty;
-
+    
+            // Buat baris baru dalam tabel transaksi
             let newRow = "";
             newRow += "<tr>";
-            newRow += "<td>" + product_name + "<input type='hidden' name='product_id[]' value='" + product_id +
-                "'></td>";
+            newRow += "<td>" + product_name + "<input type='hidden' name='product_id[]' value='" + product_id + "'></td>";
             newRow += "<td>" + product_price.toLocaleString('id-ID') + "</td>";
             newRow += "<td>" + product_qty + "<input type='hidden' name='qty[]' value='" + product_qty + "'></td>";
             newRow += "<td class='sub_total_val'>" + subTotal.toLocaleString('id-ID') +
                 "<input type='hidden' name='sub_total[]' value='" + subTotal + "'></td>";
             newRow += "<td><button type='button' class='btn btn-danger btn-sm delete-product'>Hapus</button></td>";
             newRow += "</tr>";
-
+    
+            // Tambahkan baris ke dalam tabel transaksi
             $('tbody').append(newRow);
-
-            calculateChange()
-
-            let total = 0;
-            $('.sub_total_val').each(function() {
-                let subTotal = parseFloat($(this).find('input').val()) || 0;
-                total += subTotal;
-            });
-
-            $('.total_price').text(total.toLocaleString('id-ID'));
-            $('#total_price_val').val(total);
+    
+            // Hitung ulang total harga
+            updateTotal();
         });
-
+    
+        // Fungsi untuk menghitung kembalian setelah pembayaran
         function calculateChange() {
             let total = parseFloat($('#total_price_val').val() || 0);
             let dibayar = parseFloat($("#dibayar").val() || 0);
             let kembali = dibayar - total;
-            $('.kembalian_text').text(kembali.toLocaleString('id-ID'))
-            $('#kembalian').val(kembali)
+    
+            // Perbarui tampilan kembalian di UI
+            $('.kembalian_text').text(kembali.toLocaleString('id-ID'));
+            $('#kembalian').val(kembali);
         }
-
+    
+        // Event handler untuk input pembayaran, memicu perhitungan kembalian
         $('#dibayar').on('change', function() {
             calculateChange();
-        })
+        });
     </script>
-
+    
 
 </body>
 
