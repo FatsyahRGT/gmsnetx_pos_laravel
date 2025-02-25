@@ -12,7 +12,7 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->alias([
-            'isKasir' => \App\Http\Middleware\IsKasir::class,
+            'isAdmin' => \App\Http\Middleware\IsAdmin::class,
             'checkLevel' => \App\Http\Middleware\CheckLevel::class,
         ]);
     })

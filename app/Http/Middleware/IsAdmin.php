@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 use RealRashid\SweetAlert\Facades\Alert;
 
-class IsKasir
+class IsAdmin
 {
     /**
      * Handle an incoming request.
