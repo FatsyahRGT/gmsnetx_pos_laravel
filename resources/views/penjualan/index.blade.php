@@ -49,7 +49,7 @@
         </div>
         
         <!-- ALERT BOX PERHATIAN -->
-        <div class="alert alert-warning text-center">
+        <div class="alert alert-warning text-center" style="font-size: 20px;">
             <strong>Perhatian!</strong> Ketika input angka, pastikan angka yang dimasukkan tanpa menggunakan titik (.)
         </div>
 
