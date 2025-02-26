@@ -91,7 +91,7 @@
                         <h4 class="mb-0">Dibayar</h4>
                     </div>
                     <div class="col-sm-4">
-                        <input type="number" class="form-control-lg text-end fw-bold rounded shadow-sm py-2 w-100 h-100 " id="dibayar" name="dibayar" placeholder="Masukkan jumlah pembayaran">
+                        <input type="number" class="form-control-lg text-end fw-bold rounded shadow-sm py-2 w-100 h-100 " id="dibayar" name="dibayar" placeholder="Input angka tanpa menggunakan titik (.)">
                     </div>
                 </div>
             </div>
