@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>GMSNETX | Dashboard</title>
+    <title>GMSNET | Dashboard</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -27,9 +27,9 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="../../index3.html" class="brand-link">
-                <img src="{{ asset('img/logo.jpeg') }}" alt="GMSNETX Logo"
+                <img src="{{ asset('img/logo.jpeg') }}" alt="GMSNET Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">GMSNETX</span>
+                <span class="brand-text font-weight-light">GMSNET</span>
             </a>
 
             <!-- Sidebar -->

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>GMSNETX | Log in (ID)</title>
+    <title>GMSNET | Log in (ID)</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -26,9 +26,9 @@
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
                 <div class="logo-container mt-2">
-                    <img src="{{ asset('img/logo.jpeg') }}" alt="GMSNETX Logo" style="width: 120px;">
+                    <img src="{{ asset('img/logo.jpeg') }}" alt="GMSNET Logo" style="width: 120px;">
                 </div>
-                <a href="#" class="h1"><b>GMSNETX</b></a>
+                <a href="#" class="h1"><b>GMSNET</b></a>
             </div>
             <div class="card-body">
                 <p class="login-box-msg">Internet Terbaikmu Ada Disini !!! </p>

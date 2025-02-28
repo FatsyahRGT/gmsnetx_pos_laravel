@@ -91,7 +91,7 @@
     <div class="struk">
         <div class="struk-header">
             <img src="{{ asset('img/logo.jpeg') }}" alt="Logo" style="max-width: 60px; display: block; margin: 0 auto;">
-            {{-- <h1>GMSNETX</h1> --}}
+            {{-- <h1>GMSNET</h1> --}}
             <p>Jl. Cendana No.104, Baru, Kec. Ps. Rebo, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta (13760)</p>
             <p>(0889-0601-1993)</p>
         </div>
