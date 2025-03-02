@@ -53009,4 +53009,43 @@ a.text-muted:hover {
 .dark-mode .border-dark {
   border-color: #4b545c !important;
 }
+
+/* adding new style by rgtftsh */
+
+.sidebar-dark-primary {
+  background-color: #D6E6F2 !important; /* Muted Blue */
+}
+
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link {
+  color: #333 !important; /* Warna teks menu */
+}
+
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link:hover {
+  background-color: #B0D4E3 !important; /* Warna hover */
+  color: #000 !important;
+}
+
+.sidebar-dark-primary .nav-sidebar > .nav-item .nav-link.active {
+  background-color: #A3CBE8 !important; /* Warna item aktif */
+  color: #fff !important;
+}
+
+.sidebar-dark-mutedblue {
+  background-color: #D6E6F2 !important; /* Muted Blue */
+}
+
+.sidebar-dark-mutedblue .nav-sidebar > .nav-item > .nav-link {
+  color: #333 !important; /* Warna teks menu */
+}
+
+.sidebar-dark-mutedblue .nav-sidebar > .nav-item > .nav-link:hover {
+  background-color: #B0D4E3 !important; /* Warna hover */
+  color: #000 !important;
+}
+
+.sidebar-dark-mutedblue .nav-sidebar > .nav-item .nav-link.active {
+  background-color: #A3CBE8 !important; /* Warna item aktif */
+  color: #fff !important;
+}
+
 /*# sourceMappingURL=adminlte.css.map */
