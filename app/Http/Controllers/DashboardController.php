@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Models\Sales;
 
 class DashboardController extends Controller
 {
@@ -11,7 +13,11 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard.index');
+        $totalProfit = Sales::sum('trans_total_price'); 
+        $totalTrans = Sales::count();
+
+        $totalProduct = Product::count();
+        return view('dashboard.index', compact('totalProfit', 'totalTrans', 'totalProduct'));
     }
 
     /**
