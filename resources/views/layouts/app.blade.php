@@ -60,7 +60,9 @@
             <section class="content">
 
                 <!-- Default box -->
-                <div class="card" style="border-radius: 1rem; background: url('{{ asset('img/card.jpg') }}') no-repeat center center; background-size: cover;">
+                {{-- gambar background table --}}
+                {{-- <div class="card" style="border-radius: 1rem; background: url('{{ asset('img/card1.jpg') }}') no-repeat center center; background-size: cover;"> --}}
+                <div class="card">
                     <div class="card-header">
                         <h3 class="card-title">@yield('title')</h3>
 
