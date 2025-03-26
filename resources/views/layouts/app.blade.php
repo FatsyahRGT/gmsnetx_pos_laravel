@@ -96,7 +96,7 @@
             <div class="float-right d-none d-sm-block">
                 <b>  </b>   
             </div>
-            <strong>Copyright &copy; 2025 <a href="#">GMSNET</a>.</strong> Hak Cipta
+            <strong>Copyright &copy; 2025 <a href="https://www.gmsnetx.com/">GMSNET</a>.</strong> Hak Cipta
             Dilindungi.
         </footer>
 
